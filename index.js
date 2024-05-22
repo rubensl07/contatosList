@@ -17,10 +17,13 @@ function criarCardContato(info){
     endereco.textContent = info.endereco
     const cidade = document.createElement('p')
     cidade.textContent = info.cidade
+    const divIcons = document.createElement('div') 
     const botaoExcluir = document.createElement('img')
     botaoExcluir.src = 'https://static-00.iconduck.com/assets.00/trash-icon-462x512-njvey5nf.png'
-
-    contato.replaceChildren(nome, celular, email, endereco, cidade, botaoExcluir)
+    const botaoEditar = document.createElement('img')
+    botaoEditar.src = 'https://static-00.iconduck.com/assets.00/pencil-icon-2048x2048-b2kyfub6.png'
+    divIcons.replaceChildren(botaoExcluir,botaoEditar)
+    contato.replaceChildren(nome, celular, email, endereco, cidade, divIcons)
     container.appendChild(contato)
 
     // ESSA FUNÇÃO COMENTADA LOGO ABAIXO É RESPONSÁVEL PELA AÇÃO DE UM CARD PODER SER EXCLUÍDO AO SER CLICADO NO ÍCONE DE LIXO PERTENCENTE A ELE 

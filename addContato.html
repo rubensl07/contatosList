@@ -1,0 +1,43 @@
+<html lang="pt-br"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Adicionar Contato</title> 
+</head> 
+
+<body> 
+    <h1>CRUD Contatos</h1> 
+    <div id="contatos-list"></div> 
+    <form id="contato-form"> 
+        <button type="submit">Adicionar </button> 
+        <input type="text" id="nome" placeholder="Nome" required> 
+        <input type="email" id="email" placeholder="Email" required> 
+        <input type="text" id="foto" placeholder="Foto"> 
+        <input type="tel" id="telefone" placeholder="Telefone"> 
+        <input type="text" id="endereco" placeholder="Endereço"> 
+    </form> 
+</body> 
+</html> 
+<script>
+    const nomeCampo = document.getElementById('nome')
+    const emailCampo = document.getElementById('email')
+    const fotoCampo = document.getElementById('foto')
+    const telefoneCampo = document.getElementById('telefone')
+    const enderecoCampo = document.getElementById('endereco')
+
+document.getElementById('click',async ()=>{
+    const dados = {
+        nome: nomeCampo.value,
+        email: emailCampo.value,
+        foto: fotoCampo.value,
+        telefone: telefoneCampo.value,
+        endereco: enderecoCampo.value
+    }
+const result = await postContato(dados)
+if(result.success){
+    window.location.href='./index.html'
+} else {
+    alert('Ocorreu um erro!')
+}
+})
+</script>
