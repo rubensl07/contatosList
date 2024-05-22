@@ -3,10 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./index.js" type="module"></script>
+    <script src="./index.js" type="module" defer></script>
     <title>Teste</title>
 </head>
 <body>
-    Oi
+    <div id="container">
+
+    </div>
+
 </body>
 </html>
+<style>
+    #container{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    #container>div{
+        font-size: 32px;
+        background-color: red;
+        border-radius: 32px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 8rem;
+    }
+    #container>div>img{
+        height: 60%;
+        cursor: pointer;
+    }
+</style>
